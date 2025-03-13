@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="../homework-5/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://www.weather.shecodes.io/images/logo.png" alt="SheCodes Logo" class="logo">
+            <input type="text" id="cityInput" placeholder="Enter a city...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="weather-info">
+            <div class="info-row">
+                <div class="info-left">
+                    <h1>San Francisco</h1>
+                    <ul>
+                        <li><span>Friday 14:44</span>, few clouds</li>
+                        <li>Humidity: <strong>92%</strong>, Wind: <strong>3.6km/h</strong></li>
+                    </ul>
+                </div>
+                <div class="info-right">
+                    <div class="temperature-info">
+                        <canvas width="52" height="52"></canvas>
+                        <div class="temperature-display">
+                            <span class="temperature-value">13</span>
+                            <span class="temperature-unit">°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

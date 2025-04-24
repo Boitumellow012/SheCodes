@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowers 💗</title>
+    <style>
+        :root {
+            /* Light mode palette */
+            --light-1: #f3e8e8;
+            --light-2: #f1dae8;
+            --light-3: #c9e4e8;
+
+            /* Dark mode palette */
+            --dark-1: #321821;
+            --dark-2: #2c4554;
+            --dark-3: #231b1b;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--light-1);
+            color: #333;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.6s;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #e91e63;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .grid-large {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+
+        .grid-large:hover {
+            transform: scale(1.03);
+        }
+
+        .small-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .small-grid img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .small-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .wiki-link {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .wiki-link a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        .wiki-link a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 30px;
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c2185b;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .dark-mode {
+            color: #eee;
+        }
+
+        .dark-mode .container {
+            background-color: #252424;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="toggleTheme()">🌗 Change Themes</button>
+
+        <h1>Flowers 💗</h1>
+        <h2>Why I Love Them</h2>
+
+        <div class="grid">
+            <a href="https://en.wikipedia.org/wiki/Flower" target="_blank">
+                <img src="https://plus.unsplash.com/premium_photo-1661963037608-26bdb13b2032?w=900&auto=format&fit=crop&q=60"
+                    alt="Sunflower" class="grid-large" />
+            </a>
+
+            <div class="small-grid">
+                <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=900&auto=format&fit=crop&q=60"
+                    alt="Red Rose" />
+                <img src="https://plus.unsplash.com/premium_photo-1661721985893-fa40e1b330fd?w=900&auto=format&fit=crop&q=60"
+                    alt="Dahlia" />
+                <img src="https://plus.unsplash.com/premium_photo-1671974489983-083171c0215e?w=900&auto=format&fit=crop&q=60"
+                    alt="Tulip" />
+            </div>
+        </div>
+
+        <p>
+            Flowers are nature’s way of expressing beauty and joy. They come in a variety of colors,
+            shapes, and fragrances. Whether it's a blooming sunflower, a romantic red rose, or a bright tulip,
+            flowers have a way of making people smile.
+        </p>
+
+        <div class="wiki-link">
+            📖 <a href="https://en.wikipedia.org/wiki/Flower" target="_blank">Read on Wikipedia</a>
+        </div>
+
+        <button>Learn More About Flowers</button>
+
+        <footer>
+            Coded with 💗 by
+            <a href="https://github.com/Boitumellow012" target="_blank">Boitumelo Rakobeloa</a>
+        </footer>
+    </div>
+
+    <script>
+        const lightThemes = ['--light-1', '--light-2', '--light-3'];
+        const darkThemes = ['--dark-1', '--dark-2', '--dark-3'];
+        let mode = 'light';
+        let lightIndex = 0;
+        let darkIndex = 0;
+
+        function toggleTheme() {
+            const root = document.documentElement;
+            const body = document.body;
+
+            if (mode === 'light') {
+                const bg = getComputedStyle(root).getPropertyValue(darkThemes[darkIndex]);
+                body.style.backgroundColor = bg;
+                body.classList.add('dark-mode');
+
+                darkIndex = (darkIndex + 1) % darkThemes.length;
+                if (darkIndex === 0) mode = 'dark';
+            } else {
+                const bg = getComputedStyle(root).getPropertyValue(lightThemes[lightIndex]);
+                body.style.backgroundColor = bg;
+                body.classList.remove('dark-mode');
+
+                lightIndex = (lightIndex + 1) % lightThemes.length;
+                if (lightIndex === 0) mode = 'light';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretoria Collage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .collage-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .collage-title {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #0038A8;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        .collage-subtitle {
+            text-align: center;
+            color: #FFB81C;
+            margin-bottom: 40px;
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 15px;
+        }
+
+        .collage-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .collage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 56, 168, 0.8), transparent);
+            color: white;
+            padding: 25px 15px 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .collage-item:hover .image-label {
+            transform: translateY(0);
+        }
+
+        .image-label h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            color: #FFB81C;
+        }
+
+        .item-1 {
+            grid-column: span 2;
+        }
+
+        .item-2 {
+            grid-column: span 2;
+        }
+
+        .item-3 {
+            grid-column: span 1;
+        }
+
+        .item-4 {
+            grid-column: span 3;
+        }
+
+        @media (max-width: 768px) {
+            .collage {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
+            }
+
+            .item-1,
+            .item-2,
+            .item-3,
+            .item-4 {
+                grid-column: span 1 !important;
+            }
+
+            .collage-title {
+                font-size: 2.2rem;
+            }
+
+            .collage-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="collage-container">
+        <h1 class="collage-title">Pretoria</h1>
+        <p class="collage-subtitle">The Jacaranda City - South Africa's Administrative Capital</p>
+
+        <div class="collage">
+            <div class="collage-item item-1">
+                <img src="https://plus.unsplash.com/premium_photo-1742457895536-811e304f04bf?w=900&auto=format&fit=crop&q=60"
+                    alt="Union Buildings">
+                <div class="image-label">
+                    <h3>Union Buildings</h3>
+                    <p>The official seat of the South African government and architectural masterpiece</p>
+                </div>
+            </div>
+
+            <div class="collage-item item-2">
+                <img src="https://images.unsplash.com/photo-1666013011153-5f73019d8c13?w=900&auto=format&fit=crop&q=60"
+                    alt="Jacaranda Trees">
+                <div class="image-label">
+                    <h3>Jacaranda Blooms</h3>
+                    <p>Pretoria's streets transform into purple wonderlands each spring</p>
+                </div>
+            </div>
+
+            <div class="collage-item item-3">
+                <img src="https://images.unsplash.com/photo-1682354537376-87dfbbd1bae7?w=900&auto=format&fit=crop&q=60"
+                    alt="Voortrekker Monument">
+                <div class="image-label">
+                    <h3>Voortrekker Monument</h3>
+                    <p>Iconic granite structure commemorating the Great Trek</p>
+                </div>
+            </div>
+
+            <div class="collage-item item-4">
+                <img src="https://plus.unsplash.com/premium_photo-1742418150348-371701631845?w=900&auto=format&fit=crop&q=60"
+                    alt="Pretoria Skyline">
+                <div class="image-label">
+                    <h3>City Skyline</h3>
+                    <p>Modern urban landscape blending with historic landmarks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

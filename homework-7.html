@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flowers 💗</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0e6f6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-theme {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        .dark-theme .container {
+            background-color: #1e1e1e;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #e91e63;
+            animation: slideIn 1.2s ease forwards;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .wiki-link {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .wiki-link a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        .wiki-link a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 30px;
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        button:hover {
+            background-color: #c2185b;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="toggleDarkTheme()">Dark Theme</button>
+
+        <h1>Flowers 💗</h1>
+        <h2>Why I Love Them</h2>
+
+        <div class="grid">
+            <a href="https://en.wikipedia.org/wiki/Flower" target="_blank">
+                <img src="https://plus.unsplash.com/premium_photo-1661963037608-26bdb13b2032?w=900&auto=format&fit=crop&q=60"
+                    alt="Sunflower" />
+            </a>
+            <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=900&auto=format&fit=crop&q=60"
+                alt="Red Rose" />
+            <img src="https://plus.unsplash.com/premium_photo-1661721985893-fa40e1b330fd?w=900&auto=format&fit=crop&q=60"
+                alt="Dahlia" />
+            <img src="https://plus.unsplash.com/premium_photo-1671974489983-083171c0215e?w=900&auto=format&fit=crop&q=60"
+                alt="Tulip" />
+        </div>
+
+        <p>
+            Flowers are nature’s way of expressing beauty and joy. They come in a variety of colors,
+            shapes, and fragrances. Whether it's a blooming sunflower, a romantic red rose, or a bright tulip,
+            flowers have a way of making people smile.
+        </p>
+
+        <div class="wiki-link">
+            📖 <a href="https://en.wikipedia.org/wiki/Flower" target="_blank">Read on Wikipedia</a>
+        </div>
+
+        <button>Learn More About Flowers</button>
+
+        <footer>
+            Coded with 💗 by
+            <a href="https://github.com/Boitumellow012" target="_blank">Boitumelo Rakobeloa</a>
+        </footer>
+    </div>
+
+    <script>
+        function toggleDarkTheme() {
+            document.body.classList.toggle("dark-theme");
+        }
+    </script>
+</body>
+
+</html>
